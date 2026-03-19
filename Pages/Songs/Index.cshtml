@@ -1,0 +1,94 @@
+@page
+@model MusicLibraryManager.Pages.Songs.IndexModel
+
+<main>
+
+<header><h1>Songs</h1></header>
+
+<hr />
+
+@if (TempData["StatusMessage"] != null)
+{
+    <div class="alert alert-success">
+        @TempData["StatusMessage"]
+    </div>
+}
+<ul>
+
+<a asp-page="Create" class="btn btn-primary mt-2">Create Song</a>
+<a asp-page="/Albums/Index" class="btn btn-secondary mt-2">Back to Albums</a>
+
+</ul>
+
+<hr />
+
+<h2>Search</h2>
+
+<form method="get" class="mb-3">
+
+    <input type="text" name="SearchTerm"
+           value="@Model.SearchTerm"
+           placeholder="Search by title"
+           class="form-control mb-2" />
+
+    <select name="ArtistId" class="form-control mb-2">
+        <option value="">All Artists</option>
+        @foreach (var artist in Model.Artists)
+        {
+            <option value="@artist.Id"
+                    selected="@(Model.ArtistId == artist.Id)">
+                @artist.Name
+            </option>
+        }
+    </select>
+
+    <button type="submit" class="btn btn-secondary">Filter</button>
+
+</form>
+
+
+<table class="table">
+
+<thead>
+<tr>
+<th>Title</th>
+<th>Artist</th>
+<th>Album</th>
+<th>Genre</th>
+<th>Year</th>
+<th></th>
+</tr>
+</thead>
+
+<tbody>
+@* @foreach (var song in Model.Songs)
+{
+
+
+<td>@song.Title</td>
+<td>@song.Artist?.Name</td>
+<td>@song.Album?.Name</td>
+<td>@song.Genre</td>
+<td>@song.ReleaseYear</td>
+
+<td>
+<a asp-page="Details" asp-route-id="@song.Id">Details</a>
+<a asp-page="Edit" asp-route-id="@song.Id">Edit</a>
+<a asp-page="Delete" asp-route-id="@song.Id">Delete</a>
+</td>
+
+
+} *@
+
+@foreach (var song in Model.Songs)
+{
+    <partial name="_SongsRow" model="song" />
+}
+
+</tbody>
+</table>
+
+</main>
+
+
+

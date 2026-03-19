@@ -1,0 +1,25 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<main>
+
+<header><h1>Welcome</h1></header>
+
+<hr />
+
+<p>Welcome to your music manager</p>
+
+<ul>
+    <a class="btn btn-primary mt-2" asp-area="" asp-page="/Artists/Index">Artists</a>
+    <a class="btn btn-primary mt-2" asp-area="" asp-page="/Albums/Index">Albums</a>
+</ul>
+
+@* <div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div> *@
+
+</main>

@@ -1,0 +1,65 @@
+@page "{id:int}"
+@model MusicLibraryManager.Pages.Songs.EditModel
+
+<main>
+
+<header><h1>Edit Song</h1></header>
+
+<hr />
+
+<form method="post">
+
+    <input type="hidden" asp-for="Song.Id" />
+
+    <fieldset>
+
+    <div class="mb-3">
+        <label asp-for="Song.Title" class="form-label"></label>
+        <input asp-for="Song.Title" class="form-control" />
+        <span asp-validation-for="Song.Title" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Song.ReleaseYear" class="form-label"></label>
+        <input asp-for="Song.ReleaseYear" class="form-control" />
+        <span asp-validation-for="Song.ReleaseYear" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Song.Genre" class="form-label"></label>
+        <input asp-for="Song.Genre" class="form-control" />
+        <span asp-validation-for="Song.Genre" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label>Artist</label>
+        <select asp-for="Song.ArtistId"
+                asp-items="Model.ArtistOptions"
+                class="form-control">
+        </select>
+        <span asp-validation-for="Song.ArtistId" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label>Album</label>
+        <select asp-for="Song.AlbumId"
+                asp-items="Model.AlbumOptions"
+                class="form-control">
+        </select>
+        <span asp-validation-for="Song.AlbumId" class="text-danger"></span>
+    </div>
+
+    </fieldset>
+
+    <button type="submit" class="btn btn-primary">Save</button>
+
+    <a asp-page="Details" asp-route-id="@Model.Song.Id" class="btn btn-secondary">
+        Cancel
+    </a>
+
+</form>
+</main>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

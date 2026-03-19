@@ -1,0 +1,31 @@
+@page "{id:int}"
+@model MusicLibraryManager.Pages.Songs.DetailsModel
+
+<main>
+
+<header><h1>Song Details</h1></header>
+
+<hr />
+
+<section class="Details">
+
+@if (TempData["StatusMessage"] != null)
+{
+    <div class="alert alert-success">
+        @TempData["StatusMessage"]
+    </div>
+}
+    
+<p><b>Title:</b> @Model.Song.Title</p>
+<p><b>Artist:</b> @Model.Song.Artist?.Name</p>
+<p><b>Album:</b> @Model.Song.Album?.Name</p>
+<p><b>Genre:</b> @Model.Song.Genre</p>
+<p><b>Release Year:</b> @Model.Song.ReleaseYear</p>
+
+</section>
+
+<a asp-page="Edit" class="btn btn-primary mt-2" asp-route-id="@Model.Song.Id">Edit</a>
+
+<a asp-page="Index" class="btn btn-secondary mt-2">Back</a>
+
+<a asp-page="Delete" class="btn btn-danger mt-2" asp-route-id="@Model.Song.Id">Delete</a>

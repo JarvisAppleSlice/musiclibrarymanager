@@ -1,0 +1,46 @@
+ @page
+@using MusicLibraryManager.Models
+@model MusicLibraryManager.Pages.Artists.IndexModel
+
+<main>
+
+<header><h1>Artists</h1></header>
+
+<hr />
+
+@if (TempData["StatusMessage"] != null)
+{
+    <div class="alert alert-success">
+        @TempData["StatusMessage"]
+    </div>
+}
+<ul>
+<a asp-page="Create" class="btn btn-primary mt-2">Create Artist</a>
+</ul>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var artist in Model.Artists)
+        {
+            <tr>
+                <td>@artist.Name</td>
+                <td>  
+                
+                <a asp-page="/Albums/Index" class="btn btn-primary mt-2" asp-route-artistId="@artist.Id">Albums</a>    
+                
+                <a asp-page="Edit" class="btn btn-secondary mt-2" asp-route-id="@artist.Id">Edit</a>                  
+
+                <a asp-page="Delete" class="btn btn-danger mt-2" asp-route-id="@artist.Id">Delete</a>               
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+</main>

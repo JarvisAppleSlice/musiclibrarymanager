@@ -1,0 +1,49 @@
+@page "{id:int}"
+@model MusicLibraryManager.Pages.Albums.EditModel
+
+<main>
+
+<header><h1>Edit Album</h1></header>
+
+<hr />
+
+<form method="post">
+
+    <input type="hidden" asp-for="Album.Id" />
+
+    <fieldset>
+
+    <div class="mb-3">
+        <label asp-for="Album.Name"></label>
+        <input asp-for="Album.Name" class="form-control" />
+        <span asp-validation-for="Album.Name" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Album.ReleaseYear"></label>
+        <input asp-for="Album.ReleaseYear" class="form-control" />
+        <span asp-validation-for="Album.ReleaseYear" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label>Artist</label>
+        <select asp-for="Album.ArtistId"
+                asp-items="Model.Artists"
+                class="form-control">
+        </select>
+        <span asp-validation-for="Album.ArtistId" class="text-danger"></span>
+    </div>
+
+    </fieldset>
+
+    <button type="submit" class="btn btn-primary">Save</button>
+
+    <a asp-page="Index" class="btn btn-secondary">Cancel</a>
+
+</form>
+
+</main>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

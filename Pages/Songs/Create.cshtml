@@ -1,0 +1,64 @@
+@page
+@model MusicLibraryManager.Pages.Songs.CreateModel
+
+<main>
+
+<header><h2>Create Song</h2></header>
+
+<hr />
+
+<form method="post">
+
+<fieldset>
+
+<div class="mb-3">
+<label asp-for="Song.Title"></label>
+<input asp-for="Song.Title" class="form-control"/>
+<span asp-validation-for="Song.Title" class="text-danger"></span>
+</div>
+
+<div class="mb-3">
+<label asp-for="Song.ReleaseYear"></label>
+<input asp-for="Song.ReleaseYear" class="form-control"/>
+<span asp-validation-for="Song.ReleaseYear" class="text-danger"></span>
+</div>
+
+<div class="mb-3">
+<label asp-for="Song.Genre"></label>
+<input asp-for="Song.Genre" class="form-control"/>
+<span asp-validation-for="Song.Genre" class="text-danger"></span>
+</div>
+
+<div class="mb-3">
+<label>Artist</label>
+
+<select asp-for="Song.ArtistId"
+        asp-items="Model.ArtistOptions"
+        class="form-control">
+</select>
+<span asp-validation-for="Song.ArtistId" class="text-danger"></span>
+
+</div>
+
+<div class="mb-3">
+<label>Album</label>
+
+<select asp-for="Song.AlbumId"
+        asp-items="Model.AlbumOptions"
+        class="form-control">
+</select>
+<span asp-validation-for="Song.AlbumId" class="text-danger"></span>
+
+</div>
+
+</fieldset>
+
+<button class="btn btn-primary">Create</button>
+
+</form>
+
+</main>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

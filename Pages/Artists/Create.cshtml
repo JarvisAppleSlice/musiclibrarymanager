@@ -1,0 +1,30 @@
+@page
+@model MusicLibraryManager.Pages.Artists.CreateModel
+
+<main>
+
+<header><h1>Create Artist</h1></header>
+
+<hr />
+
+<form method="post">
+
+    <fieldset>
+
+    <div class="mb-3">
+        <label asp-for="Artist.Name"></label>
+        <input asp-for="Artist.Name" class="form-control" />
+        <span asp-validation-for="Artist.Name" class="text-danger"></span>
+    </div>
+
+    </fieldset>
+
+    <button type="submit" class="btn btn-primary">Create</button>
+
+</form>
+
+</main>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

@@ -1,0 +1,34 @@
+@page "{id:int}"
+@model MusicLibraryManager.Pages.Songs.DeleteModel
+@{
+    ViewData["Title"] = "Delete Song";
+}
+
+<main>
+
+<header><h1>Delete Song</h1></header>
+
+<hr />
+
+
+<h3>Are you sure you want to delete this song?</h3>
+
+<section>
+
+@if (Model.Song is not null)
+{
+    <div class="mb-3">
+        <p><strong>Title:</strong> @Model.Song.Title</p>
+        <p><strong>Album:</strong> @Model.Song.Album?.Name</p>
+        <p><strong>Artist:</strong> @Model.Song.Artist?.Name</p>
+    </div>
+}
+
+<form method="post">
+    <button type="submit" class="btn btn-danger">Delete</button>
+    <a asp-page="Index" class="btn btn-secondary">Cancel</a>
+</form>
+
+</section>
+
+</main>
