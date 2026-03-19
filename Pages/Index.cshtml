@@ -10,12 +10,15 @@
 
 <hr />
 
-<p>Welcome to your music manager</p>
+<p>Welcome to Music Library Manager! This site allows you to easily manage your songs, artists, and albums. Use the navigation links to view or add new songs, manage artists and albums, and search or filter your library. Simply click the "Create" buttons to add new items, and use the action buttons in the tables to edit or delete entries. Enjoy organizing your music collection!</p>
 
-<ul>
-    <a class="btn btn-primary mt-2" asp-area="" asp-page="/Artists/Index">Artists</a>
-    <a class="btn btn-primary mt-2" asp-area="" asp-page="/Albums/Index">Albums</a>
-</ul>
+<hr />
+
+<section>
+    <a asp-page="/Artists/Create" class="btn btn-primary btn-lg">Create Artist</a>
+    <a asp-page="/Albums/Create" class="btn btn-primary btn-lg">Create Album</a>
+    <a asp-page="/Songs/Create" class="btn btn-primary btn-lg">Create Song</a>
+</section>
 
 @* <div class="text-center">
     <h1 class="display-4">Welcome</h1>

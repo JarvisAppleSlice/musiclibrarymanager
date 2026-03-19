@@ -1,0 +1,15 @@
+@using MusicLibraryManager.Models 
+@model Artist
+
+<tr>
+	
+	<td>@Model.Name</td>
+	
+	<td>
+		<div class="table-buttons">
+		<a asp-page="Edit" class="btn btn-primary btn-sm" asp-route-id="@Model.Id">Edit</a>		
+		<a asp-page="/Albums/Index" class="btn btn-secondary btn-sm" asp-route-artistId="@Model.Id">Albums</a>  
+		<a asp-page="Delete" class="btn btn-danger btn-sm" asp-route-id="@Model.Id">Delete</a>	
+		</div>
+	</td>
+</tr>
