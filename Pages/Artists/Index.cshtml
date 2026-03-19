@@ -15,7 +15,7 @@
     </div>
 }
 <ul>
-<a asp-page="Create" class="btn btn-primary mt-2">Create Artist</a>
+<a asp-page="Create" class="btn btn-primary">Create Artist</a>
 </ul>
 
 <table class="table">
@@ -31,12 +31,13 @@
             <tr>
                 <td>@artist.Name</td>
                 <td>  
+                <div class="table-buttons">
+                <a asp-page="/Albums/Index" class="btn btn-primary" asp-route-artistId="@artist.Id">Albums</a>    
                 
-                <a asp-page="/Albums/Index" class="btn btn-primary mt-2" asp-route-artistId="@artist.Id">Albums</a>    
-                
-                <a asp-page="Edit" class="btn btn-secondary mt-2" asp-route-id="@artist.Id">Edit</a>                  
+                <a asp-page="Edit" class="btn btn-secondary" asp-route-id="@artist.Id">Edit</a>                  
 
-                <a asp-page="Delete" class="btn btn-danger mt-2" asp-route-id="@artist.Id">Delete</a>               
+                <a asp-page="Delete" class="btn btn-danger" asp-route-id="@artist.Id">Delete</a>   
+                </div>            
                 </td>
             </tr>
         }

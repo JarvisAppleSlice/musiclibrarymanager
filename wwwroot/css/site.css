@@ -149,6 +149,13 @@ table td {
 	border-bottom: 1px solid #ddd;
 }
 
+.table-buttons {
+	display: flex;
+	justify-content: flex-end;
+	gap: 0.5rem;
+	margin-right: 1rem;
+}
+
 /* Table header colors */
 table th {
 	background-color: #007bff;
