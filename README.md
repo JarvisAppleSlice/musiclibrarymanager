@@ -11,7 +11,7 @@ This project allows users to:
 
 ---
 
-## 🛠️ Technologies Used
+## Technologies Used
 
 - **.NET 7 / .NET Core** – Razor Pages for server-side rendering  
 - **Entity Framework Core** – Database ORM  
@@ -22,7 +22,7 @@ This project allows users to:
 
 ---
 
-## 📂 Features
+##  Features
 
 ### Songs
 - Create, Read, Update, Delete (CRUD) operations  
@@ -41,7 +41,7 @@ This project allows users to:
 
 ---
 
-## 💾 Installation
+## Installation
 
 1. Clone the repository:
 git clone https://github.com/JarvisAppleSlice/musiclibrarymanager.git
