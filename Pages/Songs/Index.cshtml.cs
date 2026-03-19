@@ -55,7 +55,7 @@ public class IndexModel : PageModel
 
                 var search = SearchTerm.ToLower();
 
-                query = query.Where(s => s.Title.Contains(SearchTerm));
+                query = query.Where(s => s.Title.ToLower().Contains(search));
             }
 
             if (ArtistId.HasValue)
