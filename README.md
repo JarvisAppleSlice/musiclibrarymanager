@@ -44,6 +44,15 @@ This project allows users to:
 ## 💾 Installation
 
 1. Clone the repository:
-
-```bash
 git clone https://github.com/JarvisAppleSlice/musiclibrarymanager.git
+
+2. Navigate to the project folder:
+cd MusicLibraryManager
+
+3. Restore NuGet packages:
+dotnet restore
+
+4. Build and run the project:
+dotnet run
+
+5. Open the browser at https://localhost:5001 (or the port shown in the console).
