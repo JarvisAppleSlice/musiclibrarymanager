@@ -184,9 +184,7 @@ table tr:hover {
 	margin-bottom: 1.5rem;
 }
 
-.container:hover {
-	background-color: #218838;
-	border-color: #1e7e34;
+.nav-item:hover {
 	border: 1px solid black;
 	border-radius: 5px;
 	box-shadow: 0 4px 7px grey;
